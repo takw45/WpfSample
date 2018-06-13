@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+        xmlns:local="clr-namespace:WpfSample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="347.22" Width="475.277">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="LogonButton" Content="Sign In" HorizontalAlignment="Right" Margin="0,24,3,0" VerticalAlignment="Top" Width="75"  Visibility="{Binding Path=IsAvailableLogon}" Grid.Column="0" Grid.ColumnSpan="1" Height="20">
+            <i:Interaction.Behaviors>
+                <local:SignInBehavior/>
+            </i:Interaction.Behaviors>
+        </Button>
+        <TextBlock Margin="0" TextWrapping="Wrap" Text="{Binding Topic}" VerticalAlignment="Center" Height="46" Width="276" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" TextAlignment="Center"/>
+
+    </Grid>
+</Window>

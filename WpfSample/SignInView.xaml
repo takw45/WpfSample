@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfSample.SignInView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfSample"
+        mc:Ignorable="d"
+        Title="SignInView" Height="248.972" Width="316.355">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Content="UserName:" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" Width="268"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="46,42,0,0" TextWrapping="Wrap" Text="{Binding Path=UserName, Mode=OneWayToSource}" VerticalAlignment="Top" Width="232" AutomationProperties.IsRequiredForForm="True"/>
+
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" Width="268"/>
+        <PasswordBox HorizontalAlignment="Left" Height="23" Margin="46,112,0,0" VerticalAlignment="Top" Width="232" AutomationProperties.IsRequiredForForm="True" PasswordChar="●"/>
+
+        <Button Content="Sign-In" HorizontalAlignment="Center" Height="37" Margin="0,0,0,20" VerticalAlignment="Bottom" Width="138" FontSize="14"
+                    Command="{Binding LogonCommand}"/>
+
+    </Grid>
+</Window>
